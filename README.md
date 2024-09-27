@@ -1,0 +1,2 @@
+# Dominions5ExternalTrainer-PyEdition
+Dominions5ExternalTrainer-PyEdition by RiritoXXL
