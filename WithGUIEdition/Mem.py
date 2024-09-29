@@ -1,6 +1,9 @@
 import pymem
 import Config as c
+import dearpygui.dearpygui as dpg
 
+def DPG_GetV(value_name : str):
+    return int(dpg.get_value(value_name))
 def OpenProcDominions5():
     c.ReadConf()
     return pymem.Pymem(c.conf['Dominions5']['filename'])
@@ -13,8 +16,7 @@ def get_AstralPlayer3Addr():
 def get_AstralPlayer1Addr():
     c.ReadConf()
     return int(c.conf['Offsets']['astral_player1'])
-def WritePlayer1Astral():
+def WriteAstral_Mem(addr, val):
     c.ReadConf()
-    print("Hello world!!!")
     processmem = OpenProcDominions5()
-    processmem.write_int(GetModuleBase_Proc() + get_AstralPlayer3Addr(), int(10000))
+    processmem.write_int(addr, lambda: DPG_GetV(val))
