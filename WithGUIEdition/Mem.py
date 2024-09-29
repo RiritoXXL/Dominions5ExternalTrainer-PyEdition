@@ -2,7 +2,7 @@ import pymem
 import Config as c
 import dearpygui.dearpygui as dpg
 
-def DPG_GetV(value_name : str):
+def DPG_GetV(value_name):
     return int(dpg.get_value(value_name))
 def OpenProcDominions5():
     c.ReadConf()
